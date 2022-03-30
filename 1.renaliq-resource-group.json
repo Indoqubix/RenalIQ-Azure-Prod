@@ -1,0 +1,180 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "rgLocation": {
+            "type": "string"
+        }
+    },
+    "variables": {
+        "TAG_ENV":"PROD"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-global",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"GLOBAL"
+            }
+        },{
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-net",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"NETWORK"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-apim",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"GATEYWAY"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-data-datascience",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"APPLICATION", "APP":"DATA SCIENCE"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-data-dw",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"DATAWAREHOUSE", "APP":"dw"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-data-etl",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"OPERATIONS", "TYPE":"ETL"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-web-hs",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"APPLICATION", "APP":"HS"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-web-insight",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"APPLICATION", "APP":"INSIGHTS"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-web-patient",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"APPLICATION", "APP":"PATIENT"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-web-provider",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"APPLICATION", "APP":"PROVIDER"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-app-web-rc",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"APPLICATION", "APP":"RC"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-backups",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"BACKUPS"
+            }
+        },
+        
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-monitoring",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"MONITORING"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-service",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"SERVICES"
+            }
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "rsg-sftp",
+            "properties": {},
+            "tags": {
+                "ENV":"variables('TAG_ENV')",
+                "CATEGORY":"SFTP"
+            }
+        }
+    ],
+    "outputs": {}
+}
